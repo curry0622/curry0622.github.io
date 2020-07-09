@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Flexbox RWD</title>
+		<style type="text/css">
+			nav{
+				display:flex;
+				text-align:center;
+			}
+			nav>.logo{
+				/*沒有彈性，固定尺寸*/
+				flex:none;
+				width:200px;
+				background-color:#ffcccc;
+			}
+			nav>.menu{
+				/*盡量把容器空間張滿*/
+				flex:auto;
+				background-color:#ccccff;
+			}
+			nav>.user{
+				flex:none;
+				width:200px;
+				background-color:#ccffcc;
+			}
+			main{
+				display:flex;
+				/*自動換行*/
+				flex-wrap:wrap;
+				justify-content:center;
+				align-items:flex-start;
+				background-color:#fcfcc0;
+			}
+			main>.item{
+				flex:none;
+				width:270px;
+				margin:10px;
+				background-color:#cfcfcf;
+			}
+			@media (max-width:1200px){
+				main>.item{
+					/*兩個相加起來等於90%*/
+					width:45%;
+				}
+			}
+			@media (max-width:500px){
+				main>.item{
+					width:90%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="logo">Logo</div>
+			<div class="menu">Menu</div>
+			<div class="user">User</div>
+		</nav>
+		<!--
+			RWD回應式設計關鍵動作 : 欄位變化
+				Flex如何控制欄位變化?
+				例如 : 4欄 -> 2欄 > 1欄
+			規劃 : 
+			1200px以上 : 4欄，固定尺寸
+			500px ~ 1200px : 2欄，彈性尺寸
+			500px以下 : 1欄，彈性尺寸
+		-->
+		<main>
+			<div class="item">News1<br/>Rainy today</div>
+			<div class="item">News2</div>
+			<div class="item">News3<br/>Cloudy yesterday</div>
+			<div class="item">News4<br/>Cloudy yesterday</div>
+		</main>
+	</body>
+</html>
