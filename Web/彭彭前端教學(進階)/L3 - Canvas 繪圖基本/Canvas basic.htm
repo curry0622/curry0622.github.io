@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            /*畫布*/
+            var cvs = document.getElementById("cvs");
+            /*畫筆*/
+            var ctx = cvs.getContext("2d");
+            /*Fill -> 填滿*/
+            ctx.fillStyle = "#0c12c7";
+            ctx.globalAlpha = 0.3;//透明度
+            ctx.fillRect(70, 70, 50, 300);
+            /*Stroke -> 描邊*/
+            ctx.strokeStyle = "#48db6b";
+            ctx.globalAlpha = 0.7;
+            ctx.strokeRect(200, 200, 80, 80);
+            /*Path -> 畫路徑*/
+            ctx.beginPath();
+            ctx.moveTo(500, 500);
+            ctx.lineTo(500, 600);
+            ctx.lineTo(400, 600);
+            ctx.lineTo(500, 500);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+    </script>
+</head>
+<body>
+    <canvas id="cvs" width="800" height="600" style="border: 1px solid #000000;"></canvas>
+</body>
+</html>
