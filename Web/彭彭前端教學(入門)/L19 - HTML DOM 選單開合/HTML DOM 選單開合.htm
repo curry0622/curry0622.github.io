@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>選單開合</title>
+		<script type="text/javascript">
+			function toggleMenu(number){
+				var menu = document.getElementById("menu" + number);
+				menu.classList.toggle("hide");
+			}
+		</script>
+		<style type="text/css">
+			#menu1{
+				background-color:#abf7ce;
+			}
+			#menu2{
+				background-color:#f7f4ab;
+			}
+			.hide{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div onclick="toggleMenu(1);">Menu-1</div>
+		<ul id="menu1" class="hide">
+			<li>row-1</li>
+			<li>row-2</li>
+			<li>row-3</li>
+		</ul>
+		<div onclick="toggleMenu(2);">Menu-2</div>
+		<ul id="menu2" class="hide">
+			<li>row-1</li>
+			<li>row-2</li>
+			<li>row-3</li>
+		</ul>
+	</body>
+</html>
