@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		/**/
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<title>回應式排版設計</title>
+		<style type="text/css">
+			.head{
+				background-color:#5166ed;
+				color:#ffffff;
+				font-weight:bold;
+				font-size:40px;
+				text-align:center;
+				padding:50px;
+				font-family:微軟正黑體;
+			}
+			.content{
+				width:1000px;
+				background-color:#dee1ff;
+				/*置中*/
+				margin-left:auto;margin-right:auto;
+			}
+			.box{
+				width:280px;
+				padding:10px;
+				/*margin為自己和其他東西的距離*/
+				margin:15px;
+				
+				background-color:#ffffff;
+				
+				/*區塊並排不換行*/
+				display:inline-block;
+				vertical-align:top;
+				
+				text-align:center;
+				
+				height:150px;
+				/*行距*/
+				line-height:30px;
+			}
+			.box_title{
+				font-weight:bold;
+				font-size:20px;
+			}
+			/*如果使勇者使用手機銀幕寬度<600px*/
+			@media screen and (max-width:600px){
+				.content{
+					width:100%;
+					text-align:center;
+				}
+			}
+		</style>
+	</head>
+	<body style="margin:0px;background-color:#f5f6ff">
+		<div class="head">網頁標題</div>
+		<div class="content">
+			<div class="box">
+				<div class="box_title">區塊一</div>
+				<div>內容一</div>
+				<div>內容二</div>
+				<div>內容三</div>
+			</div>
+			<div class="box">
+				<div class="box_title">區塊二</div>
+				<div>內容一</div>
+				<div>內容二</div>
+				<div>內容三</div>
+			</div>
+			<div class="box">
+				<div class="box_title">區塊三</div>
+				<div>內容一</div>
+				<div>內容二</div>
+				<div>內容三</div>
+			</div>
+		</div>
+	</body>
+</html>
