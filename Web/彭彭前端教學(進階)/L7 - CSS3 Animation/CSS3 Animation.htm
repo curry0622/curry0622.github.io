@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function playAnimation(){
+            var box = document.getElementById("box");
+            box.classList.add("effect");
+        }
+    </script>
+    <style>
+        /*定義動畫*/
+        @keyframes blink{
+            0%{opacity: 0;}
+            50%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+        /*套用動畫*/
+        .effect{
+            animation: blink 2s infinite; 
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="width: 50px;height: 50px;background-color: #57ff7f;"></div>
+    <div style="margin-top: 10px;"><button onclick="playAnimation();">閃爍</button></div>
+</body>
+</html>
