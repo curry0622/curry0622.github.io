@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>L3-CSS選擇器</title>
+		<style type="text/css">
+			/*標籤名稱選擇器*/
+			/*套用在<tag>上*/
+			body{
+				font-size:15px;
+				font-family:"微軟正黑體";
+			}
+			h3{
+				font-size:25px;
+				font-family:"標楷體";
+				text-decoration:underline;
+			}
+			/*------------------------------------------*/
+			/*Class選擇器*/
+			/*套用在class上，div.content表示tag為div，class為content者*/
+			div.content{
+				padding:10px;
+				border:5px dashed #888888;
+			}
+			
+			/*id選擇器*/
+			/*前面加#id*/
+			#btn_send{
+				border:3px dashed black;
+				background-color:green;
+				padding:5px;
+			}
+			/*------------------------------------------*/
+			/*虛擬選擇器 -> 搭配其他選擇器使用*/
+			/* :hover */
+			#btn_send:hover{
+				background-color:yellow;
+			}
+			/* :focus -> 當目標取得焦點時，套用一組設定*/
+			input:focus{
+				border:5px solid red;
+			}
+			/*------------------------------------------*/
+			/*階層式選擇器 -> 搭配其他選擇器使用*/
+			/*外層標籤需先對應到*/
+			.blue a{
+				color:blue;
+			}
+			.green a{
+				color:green;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>標題一</h3>
+		<div class="content">段落一</div>
+		<h3>標題二</h3>
+		<div class="content">段落二</div>
+		<h3>列表一</h3>
+		<ul>
+			<li>項目一</li>
+			<li>項目二</li>
+			<li>項目三</li>
+		</ul>
+		<div class="content">
+			填寫訊息 <input type="text"/> <button id="btn_send">送出</button>
+		</div>
+		<h3>藍色連結</h3>
+		<ul class="blue">
+			<li><a href="http://www.google.com">Google</a></li>
+			<li><a href="http://www.youtube.com">Youtube</a></li>
+		</ul>
+		<h3>綠色連結</h3>
+		<ul class="green">
+			<li><a href="http://www.facebook.com">Facebook</li>
+			<li><a href="http://www.twitter.com">Twitter</li>
+		</ul>
+	</body>
+</html>
