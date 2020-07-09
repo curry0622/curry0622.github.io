@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var video = document.getElementById("video");
+            video.addEventListener("timeupdate", function(){
+                var timer = document.getElementById("timer");
+                timer.innerHTML = video.currentTime / video.duration * 100 + "%";
+            })
+            video.addEventListener("ended", function(){
+                alert("ended");
+            });
+        }
+        
+        function playVideo(){
+            video.play();
+        }
+        function pauseVideo(){
+            video.pause();
+        }
+        function replayVideo(){
+            video.currentTime = 0;
+            video.play();
+        }
+    </script>
+</head>
+<body>
+    <video id="video" src="Lamp.mp4"></video>
+    <div>
+        <button onclick="playVideo();">開始</button>
+        <button onclick="pauseVideo();">暫停</button>
+        <button onclick="replayVideo();">重新開始</button>
+        <span id="timer"></span>
+    </div>
+</body>
+</html>
