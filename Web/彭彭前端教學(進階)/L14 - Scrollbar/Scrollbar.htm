@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var box;
+        window.onload = function(){
+            box = document.getElementById("box");
+            /*scrollTop: 直向卷軸*/
+            /*scrollLeft: 橫向卷軸*/
+            /*賦值表示給定卷軸的初始位置*/
+            //box.scrollTop = 50;
+            window.setInterval(scrollAuto, 50);
+        }
+        function scrollAuto(){
+            box.scrollTop++;
+        }
+    </script>
+    <style>
+        .box{
+            border: 1px solid #000000;
+            width: 200px;
+            height: 100px;
+            /*auto: 電腦決定是否需要卷軸*/
+            /*hidden: 卷軸被隱藏*/
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+        <div>This is line 1</div>
+        <div>This is line 2</div>
+        <div>This is line 3</div>
+        <div>This is line 4</div>
+        <div>This is line 5</div>
+        <div>This is line 6</div>
+        <div>This is line 7</div>
+        <div>This is line 8</div>
+        <div>This is line 9</div>
+        <div>This is line 10</div>
+        <div>This is line 11</div>
+        <div>This is line 12</div>
+    </div>
+    
+</body>
+</html>
