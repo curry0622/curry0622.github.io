@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Javascript JSON</title>
+		<script type="text/javascript">
+			/*JSON: Javascript Object Notation (Javascript 物件表示法)*/
+			/*
+				使用 JSON.stringify(物件) 將物件轉換成JSON格式的字串，會忽略函式
+				使用 JSON.parse(JSON格式字串) 將字串轉換成物件結構
+			*/
+			/*
+				var obj = new Object();
+				obj.x = 3;
+				obj.y = 4;
+				obj.get = function(){
+					alert(obj.x + ", " + obj.t);
+				};
+			*/
+			var obj = {
+				"x" : 3, 
+				"y" : 4, 
+				"get" : function(){
+				alert(this.x + ", " + this.y);
+			}};
+			//obj.get();
+			var jsonstr = JSON.stringify(obj);
+			alert(jsonstr);
+			var plainobj = JSON.parse(jsonstr);
+			alert(plainobj);
+		</script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+	
+	</body>
+</html>
