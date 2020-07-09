@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>HTML DOM</title>
+		<script type="text/javascript">
+			var red = true;
+			function change(){
+				var box = document.getElementById("box");
+				if(red){
+					box.style.backgroundColor = "black";
+					red = false;
+				}
+				else{
+					box.style.backgroundColor = "red";
+					red = true;
+				}
+			}
+		</script>
+		<style type="text/css">
+			#box{
+				background-color:red;
+				height:100px;
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div>
+			<br/>
+			<button onclick="change();">Change</button>
+		</div>
+	</body>
+</html>
