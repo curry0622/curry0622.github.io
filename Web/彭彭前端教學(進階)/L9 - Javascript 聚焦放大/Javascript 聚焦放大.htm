@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function extend(){
+            var box = document.getElementById("box");
+            /*取得style*/
+            var style = window.getComputedStyle(box);
+            var width = style.getPropertyValue("width"); // width = 25px
+            width = parseInt(width); // width = 25
+            var extendId = window.setInterval(function(){
+                box.style.width = width++ + "px";
+                /*停止動畫*/
+                if(width > 500){
+                    window.clearInterval(extendId);
+                    return;
+                }
+            }, 20);
+            
+        }
+    </script>
+    <style>
+        .box{
+            width: 25px;
+            height: 25px;
+            background-color: #acfa64;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box" onclick="extend();"></div>
+</body>
+</html>
