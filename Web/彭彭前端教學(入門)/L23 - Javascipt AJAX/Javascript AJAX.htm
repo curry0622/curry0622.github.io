@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Javascript AJAX</title>
+		<script type="text/javascript">
+			function getData(str){
+				//XMLHttpRequest 物件專門用來和伺服器連線
+				var req = new XMLHttpRequest();
+				req.open("get", "http://127.0.0.1/" + str);
+				req.onload = function(){
+					var content = document.getElementById("content");
+					content.innerHTML = this.responseText;
+				};
+				req.send();
+			}
+		</script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body onload="getData('Top.htm')">
+		<div>
+			<span onclick="getData('Top.htm');">熱門</span>
+			<span onclick="getData('New.htm');">最新</span>
+		</div>
+		<hr/>
+		<div id="content"></div>
+	</body>
+</html>
