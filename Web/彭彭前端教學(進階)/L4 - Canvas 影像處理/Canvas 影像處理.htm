@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cvs, ctx;
+        window.onload = function(){
+            cvs = document.getElementById("cvs");
+            ctx = cvs.getContext("2d");
+            var img =  new Image();
+            img.src = "img.jpg";
+            img.onload = function(){
+                ctx.drawImage(this, 0, 0, cvs.width, cvs.height);
+            }
+        }
+        function invertColor(){
+            var pixels = ctx.getImageData(0, 0, cvs.width, cvs.height);
+            var data = pixels.data; // 一個像素4 bytes(r, g, b, a) (range : 1 ~ 255)
+            for(var i = 0; i < data.length; i += 4){
+                data[i] = 255 - data[i];
+                data[i + 1] = 255 - data[i + 1];
+                data[i + 2] = 255 - data[i + 2];
+            }
+            ctx.putImageData(pixels, 0, 0);
+        }
+    </script>
+</head>
+<body>
+    <div onclick="invertColor();"><button>Invert Color</button></div>
+    <canvas id="cvs" width="400" height="300" style="border: 1px solid #000000;"></canvas>
+</body>
+</html>
