@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById("box");
+            box.addEventListener("mouseover", function(){
+                box.style.backgroundColor = "#300038";
+            });
+            box.addEventListener("mouseout", function(){
+                box.style.backgroundColor = "#e657ff";
+            });
+        }
+    </script>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: #e657ff;
+            opacity: 0.3;
+            /*監控屬性，一但使用javascript更動，就使用漸變處理*/
+            transition: opacity 1s, background-color 0.7s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box"></div>
+</body>
+</html>
