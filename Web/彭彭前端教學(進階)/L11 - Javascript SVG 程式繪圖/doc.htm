@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            svg = document.getElementById("svg");
+            /*line*/
+            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", 20);
+            line.setAttribute("y1", 20);
+            line.setAttribute("x2", 200);
+            line.setAttribute("y2", 200);
+            line.setAttribute("stroke", "green");
+            line.setAttribute("stroke-width", 2);
+            svg.appendChild(line);
+            /*rect*//*Using JSON*/
+            var rect = createSvgElement("rect", {
+                "x": 150,
+                "y": 400,
+                "width": 100,
+                "height": 50,
+                "fill": "blue"
+            });
+            svg.appendChild(rect);
+        }
+        function createSvgElement(tagName, attributes){
+            var element = document.createElementNS("http://www.w3.org/2000/svg", tagName);
+            for(var name in attributes){
+                element.setAttribute(name, attributes[name]);
+            }
+            return element;
+        }
+    </script>
+</head>
+<body>
+    <svg id="svg" width="500" height="500" style="border:1px solid #000000"></svg>
+</html>
