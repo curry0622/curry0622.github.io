@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var mode = 0;
+        window.onload = function(){
+            svg = document.getElementById("svg");
+            svg.addEventListener("mousedown", function(e){
+                var bounding = this.getBoundingClientRect();
+                var x = e.clientX - bounding.left;
+                var y = e.clientY - bounding.top;
+                switch(mode){
+                    case 1://rect
+                        this.appendChild(createSvgElement("rect", {
+                            "x": x,
+                            "y": y,
+                            "width": 50,
+                            "height": 50,
+                            "fill": "blue",
+                            "opacity": 0.3
+                        }));
+                        break;
+                    case 2://line
+                        var line = createSvgElement("line", {
+                            "x1": x,
+                            "y1": y,
+                            "x2": x,
+                            "y2": y,
+                            "stroke": "blue",
+                            "stroke-width": 2
+                        });
+                        this.appendChild(line);
+                        /*偵測mouse在整個doc的座標*/
+                        
+                        var drag = function(e){
+                            line.setAttribute("x2", e.clientX - bounding.left);
+                            line.setAttribute("y2", e.clientY - bounding.top);
+                            console.log("drag");
+                        }
+                        var drop = function(){
+                            document.removeEventListener("mousemove", drag);
+                            document.removeEventListener("mouseup", drop);
+                        }
+                        document.addEventListener("mousemove", drag);
+                        document.addEventListener("mouseup", drop);
+                        break;
+                }
+            });
+            
+        }
+        
+        function createSvgElement(tagName, attributes){
+            var element = document.createElementNS("http://www.w3.org/2000/svg", tagName);
+            for(var name in attributes){
+                element.setAttribute(name, attributes[name]);
+                console.log(name + ": " + attributes[name]);
+            }
+            return element;
+        }
+
+        function rectMode(){
+            mode = 1;
+        }
+
+        function lineMode(){
+            mode = 2;
+        }
+    </script>
+</head>
+<body>
+    <svg id="svg" width="500" height="500" style="border:1px solid #000000"></svg>
+    <button onclick="rectMode();">方形</button>
+    <button onclick="lineMode();">直線</button>
+</html>
