@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #ef8cff;
+            /*移動*/
+            transform: translate(500px, 300px);
+            /*縮放*/
+            transform: scale(2.5, 3);
+            /*旋轉*/
+            transform: rotate(45deg);
+            /*歪斜*/
+            transform: skew(0deg, 30deg);
+            /*全部寫在一起才有組合效果*/
+            transform: translate(500px, 300px) rotate(45deg);
+        }
+        .cube>.top{
+            width: 240px;
+            height: 60px;
+            background-color: #f7c7ff;
+            transform: skew(-45deg, 0deg) translate(30px, 0px);
+        }
+        .cube>.center{
+            width: 240px;
+            height: 240px;
+            background-color: #eb70ff;
+            display: inline-block;
+        }
+        .cube>.right{
+            width: 60px;
+            height: 240px;
+            background-color: #8c00a3;
+            display: inline-block;
+            transform: skew(0deg, -45deg) translate(0px, -30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="cube">
+        <div class="top"></div>
+        <div class="center"></div><div class="right"></div>
+    </div>
+</body>
+</html>
