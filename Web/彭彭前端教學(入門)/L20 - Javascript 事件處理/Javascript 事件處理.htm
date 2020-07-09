@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Javascript事件處理</title>
+		<script type="text/javascript">
+			function out(element){
+				element.style.backgroundColor = '#69e4ff';
+			}
+			function over(element){
+				element.style.backgroundColor = '#4284f5';
+			}
+			function init(){
+				var btn5 = document.getElementById("btn5");
+				btn5.onclick = function(){
+					btn5.style.display = "none";
+				};
+				var overbtn = function(){
+					btn5.style.backgroundColor = "#e854ff";
+				};
+				var outbtn = function(){
+					alert("out");
+					btn5.style.backgroundColor = "#f6bdff";
+				};
+				btn5.addEventListener("mouseover", overbtn());
+				btn5.addEventListener("mouseout", outbtn());
+			}
+		</script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body onload="init();">
+		<button onclick="alert('click');">BTN1</button>
+		<button onclick="this.style.backgroundColor='red';">BTN2</button>
+		<button onmouseout="this.style.backgroundColor='#f7f4ab';"
+				onmouseover="this.style.backgroundColor='#ffcf69';">BTN3</button>
+		<button onmouseout="out(this)"
+				onmouseover="over(this)">BTN4</button>
+		<button id="btn5">BTN5</button>
+	</body>
+</html>
