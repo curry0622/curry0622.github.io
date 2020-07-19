@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body id="body">
+    <button id="btn_list_like" title="your favorite">&equiv;</button>
+    <button id="btn_like" title="like this color !">&hearts;</button>
+    <div id="color_code" class="container" title="click to copy!"></div>
+    <div id="vertical_line" style="height: 600px; border-left: 3px solid white;"></div>
+    <div class="container">
+        <div id="btn_plus_red" class="btn btn_plus"></div>
+        <div id="txt_num_red" class="txt_num" title="RED">161</div>
+        <div id="btn_minus_red" class="btn btn_minus"></div>
+    </div>
+    <div class="container">
+        <div id="btn_plus_green" class="btn btn_plus"></div>
+        <div id="txt_num_green" class="txt_num" title="GREEN">147</div>
+        <div id="btn_minus_green" class="btn btn_minus"></div>
+    </div>
+    <div class="container">
+        <div id="btn_plus_blue" class="btn btn_plus"></div>
+        <div id="txt_num_blue" class="txt_num" title="BLUE">240</div>
+        <div id="btn_minus_blue" class="btn btn_minus"></div>
+    </div>
+    <div id="btn_login">Login</div>
+
+    <!--Login Modal-->
+    <div id="modal_login" class="modal">
+        <div class="modal_content">
+            <div id="modal_login_header" class="modal_header">
+                <span id="btn_close_modal_login">&times;</span>
+                <h3>Login</h3>
+            </div>
+            <div id="modal_login_body" class="modal_body">
+                <br/>
+                <form>
+                    User Name <br/><input type="text" id="input_username"></input><br/>
+                    Password <input type="password" id="input_password"></input><br/>
+                    <input type="submit" value="Submit" id="btn_submit"></input>
+                    <br/>
+                </form>
+            </div>
+            <div id="modal_login_footer" class="modal_footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
